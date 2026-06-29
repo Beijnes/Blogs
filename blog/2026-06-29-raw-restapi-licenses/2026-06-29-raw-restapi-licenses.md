@@ -87,15 +87,6 @@ $headers = @{ Authorization = "Bearer $token" }
 
 #### 🔍 OData Query Parameters
 
-| Parameter          | Purpose                          | Example                     |
-|:-------------------|:---------------------------------|:----------------------------|
-| $count=true    | Include total count in response  | Enables pagination info     |
-| $skip=0        | Pagination: Skip N records       | Skip first 0 records        |
-| $top=50        | Pagination: Return max N records | Return max 50 per request   |
-| $orderby=name  | Sort results                     | Sort by name ascending      |
-| $select=id,name| Select specific fields           | Reduces response payload    |
-| _=timestamp    | Cache buster                     | Force fresh data each call  |
-
 | Parameter           | Purpose         | Example |
 |:-------------|:------------------|:------|
 | **$count=true** | Include total count in response | Enables pagination info    |
