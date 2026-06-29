@@ -86,21 +86,24 @@ $headers = @{ Authorization = "Bearer $token" }
 ### 3. Query Zones with OData Parameters
 
 #### 🔍 OData Query Parameters
+
 | Parameter          | Purpose                          | Example                     |
 |:-------------------|:---------------------------------|:----------------------------|
-| **$count=true**    | Include total count in response  | Enables pagination info     |
-| **$skip=0**        | Pagination: Skip N records       | Skip first 0 records        |
-| **$top=50**        | Pagination: Return max N records | Return max 50 per request   |
-| **$orderby=name**  | Sort results                     | Sort by name ascending      |
-| **$select=id,name**| Select specific fields           | Reduces response payload    |
-| **_=timestamp**    | Cache buster                     | Force fresh data each call  |
+| $count=true    | Include total count in response  | Enables pagination info     |
+| $skip=0        | Pagination: Skip N records       | Skip first 0 records        |
+| $top=50        | Pagination: Return max N records | Return max 50 per request   |
+| $orderby=name  | Sort results                     | Sort by name ascending      |
+| $select=id,name| Select specific fields           | Reduces response payload    |
+| _=timestamp    | Cache buster                     | Force fresh data each call  |
 
-| head1        | head two          | three |
+| Parameter           | Purpose         | Example |
 |:-------------|:------------------|:------|
-| ok           | good swedish fish | nice  |
-| out of stock | good and plenty   | nice  |
-| ok           | good `oreos`      | hmm   |
-| ok           | good `zoute` drop | yumm  |
+| **$count=true** | Include total count in response | Enables pagination info    |
+| **$skip=0** | Pagination: Skip N records | Skip first 0 records   |
+| **$top=50** | Pagination: Return max N records | Return max 50 per request    |
+| **$orderby=name** | Sort results | Sort by name ascending  |
+| **$select=id,name** | Select specific fields | Reduces response payload |
+| **_=timestamp** | Cache buster | Force fresh data each call  |
 
 
 
