@@ -4,10 +4,11 @@ parent: "Blog"
 nav_order: 1
 ---
 
-# Fallback to REST API if the powershell modules of Recast Application Workspace isn't enough.
+# Detailed license overview Recast Application Workspace
 
 1. TOC
-{:toc}
+{% toc %}
+
 
 ## Why I Started This
 
@@ -39,7 +40,7 @@ For supported automation and supportability, use the official PowerShell module 
 This blog is about exploration and learning, not replacing the supported path.
 
 
-## OAuth2 Authentication & Zone License Query Flow
+## OAuth2 Authentication and license zone retrieval flow
 
 ![Diagram of script](img/diagram-process.png)
 
@@ -47,47 +48,18 @@ This blog is about exploration and learning, not replacing the supported path.
 ## Key API Concepts Visualized
 
 ### 🔑 Authentication Flow
-```
-┌─────────────────────────────────────────────┐
-│   User Credentials                          │
-│   ├─ username: local\admin                  │
-│   ├─ password: ****                         │
-│   └─ client_id: 74AAE62C-58BE-...          │
-└────────────┬────────────────────────────────┘
-             │
-             ▼
-┌─────────────────────────────────────────────┐
-│   OAuth2 Token Endpoint                     │
-│   POST /api/oauth2/token                    │
-│   ├─ grant_type: password                   │
-│   └─ scope: idtoken content                 │
-└────────────┬────────────────────────────────┘
-             │
-             ▼
-┌─────────────────────────────────────────────┐
-│   Access Token Received ✅                   │
-│   token_type: Bearer                        │
-│   expires_in: 3600                          │
-│   access_token: eyJ0eXAi...                │
-└────────────┬────────────────────────────────┘
-             │
-             ▼
-┌─────────────────────────────────────────────┐
-│   Authorization Header                      │
-│   Authorization: Bearer eyJ0eXAi...        │
-│   (Used for all API calls)                  │
-└─────────────────────────────────────────────┘
-```
+
+![Authentication Flow](img/authentication-flow.png)
 
 ### 🔍 OData Query Parameters
-| Parameter | Purpose | Example |
-|-----------|---------|---------|
-| **$count=true** | Include total count in response | Enables pagination info |
-| **$skip=0** | Pagination: Skip N records | Skip first 0 records |
-| **$top=50** | Pagination: Return max N records | Return max 50 per request |
-| **$orderby=name** | Sort results | Sort by name ascending |
-| **$select=id,name,...** | Select specific fields | Reduces response payload |
-| **_=timestamp** | Cache buster | Force fresh data each call |
+| Parameter          | Purpose                          | Example                     |
+|--------------------|----------------------------------|-----------------------------|
+| **$count=true**    | Include total count in response  | Enables pagination info     |
+| **$skip=0**        | Pagination: Skip N records       | Skip first 0 records        |
+| **$top=50**        | Pagination: Return max N records | Return max 50 per request   |
+| **$orderby=name**  | Sort results                     | Sort by name ascending      |
+| **$select=id,name**| Select specific fields           | Reduces response payload    |
+| **_=timestamp**    | Cache buster                     | Force fresh data each call  |
 
 ### 🔄 Loop Through All Zones
 ```
@@ -205,15 +177,10 @@ Using this approach, I created a script that:
 - Pulls license details per zone
 - Returns reusable PowerShell objects for reporting and automation
 
-Script source: [restapi-blog.ps1](restapi-blog.ps1)
-
-
+Final script: [restapi-blog.ps1](restapi-blog.ps1)
 
 The main gain was not just script output, but a repeatable method to learn and build quickly with AI assistance.
 
 If your background is packaging and platform operations instead of API engineering, you can still make meaningful progress.
 
 Start small, validate one call at a time, and use Copilot as a technical translator between portal behavior and script implementation.
-
-
-
