@@ -1,21 +1,15 @@
 ---
-title: "Welcome"
+title: "aboutme"
 nav_order: 1
 ---
 
-# Welcome
 
-This site contains:
+#About Me
 
-- **Documentation** for my projects  
-- **Blog posts** about tech, virtualization, Windows optimization, and AI workflows  
+I’m Roel Beijnes, Senior Consultant for End User Computing at Previder. With a strong background in application delivery technologies, including MSI packaging, App-V, ThinApp, and VMware App Volumes, I specialize in designing and optimizing modern application delivery strategies.
 
----
+Leveraging this background, I was asked to co-develop and onboard our Managed Application Delivery Service. Today, I’m proud to own this service as Product Owner, driving its roadmap and ensuring it continues to evolve with the needs of our customers.
 
-# Latest Posts
 
-{% assign latest_posts = site.blog | sort: "date" | reverse %}
-{% for post in latest_posts limit:3 %}
-- [{{ post.title }}]({{ post.url }}) — {{ post.date | date: "%B %d, %Y" }}
-{% endfor %}
+![Corporate Logo](media/img/corporate_previder_logo_RGB.png)
 
