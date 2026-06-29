@@ -6,7 +6,8 @@ nav_order: 1
 
 # Fallback to REST API if the powershell modules of Recast Application Workspace isn't enough.
 
-
+1. TOC
+{:toc}
 
 ## Why I Started This
 
