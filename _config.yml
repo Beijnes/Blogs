@@ -1,9 +1,8 @@
 title: "Roel Beijnes - Blogging"
 description: "Technical documentation and blog posts"
 remote_theme: just-the-docs/just-the-docs
-
+color_scheme: auto
 search_enabled: true
-
 back_to_top: true
 back_to_top_text: "Back to top"
 heading_anchors: true
