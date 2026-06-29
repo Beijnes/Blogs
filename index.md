@@ -2,9 +2,7 @@
 title: "aboutme"
 nav_order: 1
 ---
-
-
-#About Me
+# About Me
 
 I’m Roel Beijnes, Senior Consultant for End User Computing at Previder. With a strong background in application delivery technologies, including MSI packaging, App-V, ThinApp, and VMware App Volumes, I specialize in designing and optimizing modern application delivery strategies.
 

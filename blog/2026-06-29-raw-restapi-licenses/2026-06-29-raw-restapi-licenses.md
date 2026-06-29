@@ -1,15 +1,21 @@
-# Using REST API to Build a Recast Application Workspace License Report with GitHub Copilot
+---
+title: "My First Blog Post"
+parent: "Blog"
+nav_order: 1
+---
 
-> A practical field story from End User Computing: from zero REST API and OAuth knowledge to a working reporting script.
+{:toc}
+
+# Fallback to REST API if the powershell modules of Recast Application Workspace isn't enough.
 
 ## Why I Started This
 
-Recast Software provides a PowerShell module as the officially supported way to interact with Recast Application Workspace. Their goal is to cover most actions available in the portal, but there are still gaps — especially when you want to automate or integrate deeper functionality.
+Recast Software provides a PowerShell module as the officially supported way to interact with Recast Application Workspace. Their goal is to cover most actions available in the portal, but there are still gaps especially when you want to automate or integrate deeper functionality.
 
 Together with my colleague Ivan de Mes, I started exploring the underlying REST API to see how far we could push it. Our biggest challenge was obtaining a valid access token, and getting OAuth authentication to work wasn’t straightforward.
 
 With help from Copilot and additional information provided by Recast Software with the JavaScript reference at
-https://api.liquit.com/workspace/v2/liquit.workspace.js — I managed to build a working script that retrieves an OAuth access token. Once we had that token, the REST API opened up and we were finally able to experiment with endpoints beyond what the PowerShell module currently supports.
+https://api.liquit.com/workspace/v2/liquit.workspace.js. I managed to build a working script that retrieves an OAuth access token. Once we had that token, the REST API opened up and we were finally able to experiment with endpoints beyond what the PowerShell module currently supports.
 
 This gives us a lot more flexibility and allows us to automate scenarios that weren’t possible before.
 
@@ -19,7 +25,7 @@ In my conversations with Recast Software, Donny van der Linde expressed the need
 
 Because I had previously shared how I use GitHub Copilot to simplify REST API work, Donny asked me to look into retrieving the missing license information through the Recast Application Workspace API. Based on my earlier experience with similar integrations, I was able to achieve this within an hour, with Copilot assisting in several of the more repetitive or detailed steps.
 
-This assignment reminded me how much I appreciate working through practical technical challenges, and it motivated me to document the results. I wanted to ensure the effort was recognized and to share the outcome with peers who may benefit from it. It also provides a good opportunity to demonstrate how AI-assisted tooling can support our daily work and help us approach tasks more efficiently. Due to limited time and energy, this blog was created with Copilot and edited by Roel Beijnes.
+This reminded me how much I appreciate working through practical technical challenges, and it motivated me to document the results. I wanted to ensure the effort was recognized and to share the outcome with peers who may benefit from it. It also provides a good opportunity to demonstrate how AI-assisted tooling can support our daily work and help us approach tasks more efficiently. Due to limited time and energy, this blog was created with Copilot and edited by Roel Beijnes.
 
 ## Important Support Note
 

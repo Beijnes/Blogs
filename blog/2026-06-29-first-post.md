@@ -1,7 +1,7 @@
 ---
 title: "My First Blog Post"
 parent: "Blog"
-nav_order: 1
+nav_order: 2
 ---
 
 {:toc}
