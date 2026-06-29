@@ -41,55 +41,8 @@ This blog is about exploration and learning, not replacing the supported path.
 
 ## OAuth2 Authentication & Zone License Query Flow
 
-```mermaid
-%%{init: {'flowchart': {'curve': 'linear', 'useMaxWidth': false}, 'theme': 'base', 'primaryColor': '#667eea', 'primaryBorderColor': '#5568d3', 'lineColor': '#60a5fa', 'textColor': '#e5e7eb', 'fontSize': '16px', 'themeVariables': {'edgeLabelBackground': '#111827', 'textColor': '#e5e7eb'}}}%%
-flowchart TD
-    A["🔧 START: Configuration"] --> B["📋 Credentials Setup<br/>Server, ClientID, Username, Password"]
-    
-    B --> D["🔐 AUTHENTICATION STEP"]
-    
-    D --> E["POST /api/oauth2/token<br/>grant_type: password<br/>scope: idtoken content"]
-    E --> F{✅ Token OK?}
-    F -->|YES| G["🎫 Extract Bearer Token"]
-    F -->|NO| H["❌ AUTH FAILED"]
-    H --> Z["🛑 ERROR EXIT"]
-    
-    G --> I["🔑 Create Authorization Header<br/>Authorization: Bearer {token}"]
-    I --> J["⏱️ Generate Cache Buster<br/>Timestamp = Unix Milliseconds"]
-    
-    J --> K["📊 QUERY ALL ZONES"]
-        
-    K --> O["Loop all the zones"]
-    
-    O --> P["🆔 Extract: Zone ID & Name"]
-    
-    P --> R["📃 Get License Object"]
-    
-        R --> T["➕ Append to Results"]
-    
-    T --> U{More Zones?}
-    U -->|YES| O
-    U -->|NO| W["📤 RETURN allLicenses"]
-    
-    
-    classDef start fill:#667eea,stroke:#5568d3,stroke-width:3px,color:#fff
-    classDef auth fill:#f39c12,stroke:#e67e22,stroke-width:3px,color:#fff
-    classDef query fill:#16a085,stroke:#138d75,stroke-width:3px,color:#fff
-    classDef loop fill:#8e44ad,stroke:#7d3c98,stroke-width:3px,color:#fff
-    classDef success fill:#27ae60,stroke:#1e8449,stroke-width:3px,color:#fff
-    classDef error fill:#e74c3c,stroke:#c0392b,stroke-width:3px,color:#fff
-    classDef process fill:#3498db,stroke:#2980b9,stroke-width:2px,color:#fff
-    
-    class A start
-    class D,E,F,G,I auth
-    class K,L,M query
-    class N,O,P,Q,R,S,T,U loop
-    class V,W,X success
-    class H,Z error
-    class B,C,J process
+![Diagram of script](img/diagram-process.png)
 
-    linkStyle default stroke:#60a5fa,stroke-width:2.5px,color:#e5e7eb
-```
 
 ## Key API Concepts Visualized
 
