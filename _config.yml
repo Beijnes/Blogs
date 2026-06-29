@@ -11,3 +11,14 @@ just_the_docs:
   color_scheme: auto
 # Navigation order for top-level sections
 nav_order: 1
+# Collections for blog posts
+collections:
+  blog:
+    output: true
+    permalink: /blog/:path/
+
+just_the_docs:
+  collections:
+    blog:
+      name: Blog
+      nav_order: 2
