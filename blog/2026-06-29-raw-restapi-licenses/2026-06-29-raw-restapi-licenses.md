@@ -49,7 +49,7 @@ This blog is about exploration and learning, not replacing the supported path.
 
 ### 🔑 Authentication Flow
 
-![Authentication Flow](img/authentication-flow.png)
+![Authentication Flow](img/authentication-flow.png){: .img-small }
 
 ### 🔍 OData Query Parameters
 | Parameter          | Purpose                          | Example                     |

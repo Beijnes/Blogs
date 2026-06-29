@@ -9,5 +9,5 @@ I’m Roel Beijnes, Senior Consultant for End User Computing at Previder. With a
 Leveraging this background, I was asked to co-develop and onboard our Managed Application Delivery Service. Today, I’m proud to own this service as Product Owner, driving its roadmap and ensuring it continues to evolve with the needs of our customers.
 
 
-![Corporate Logo](media/img/corporate_previder_logo_RGB.png)
+![Corporate Logo](media/img/corporate_previder_logo_RGB.png){: .img-small }
 
