@@ -1,9 +1,9 @@
 ---
-title: "My First Blog Post"
+title: "Detailed license overview with REST API - Recast Application Workspace"
 parent: "Blog"
 nav_order: 1
 ---
-
+1. TOC
 {:toc}
 
 # Fallback to REST API if the powershell modules of Recast Application Workspace isn't enough.
