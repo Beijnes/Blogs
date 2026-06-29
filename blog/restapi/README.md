@@ -2,15 +2,6 @@
 
 > A practical field story from End User Computing: from zero REST API and OAuth knowledge to a working reporting script.
 
-## About Me
-
-I’m Roel Beijnes, Senior Consultant for End User Computing at Previder. With a strong background in application delivery technologies, including MSI packaging, App-V, ThinApp, and VMware App Volumes, I specialize in designing and optimizing modern application delivery strategies.
-
-Leveraging this background, I was asked to co-develop and onboard our Managed Application Delivery Service. Today, I’m proud to own this service as Product Owner, driving its roadmap and ensuring it continues to evolve with the needs of our customers.
-
-![Corporate Logo](img/corporate_logo_RGB.png)
-
-
 ## Why I Started This
 
 Recast Software provides a PowerShell module as the officially supported way to interact with Recast Application Workspace. Their goal is to cover most actions available in the portal, but there are still gaps — especially when you want to automate or integrate deeper functionality.
