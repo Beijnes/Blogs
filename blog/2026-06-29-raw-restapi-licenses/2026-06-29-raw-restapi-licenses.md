@@ -6,8 +6,6 @@ nav_order: 1
 
 # Detailed license overview Recast Application Workspace
 
-1. TOC
-{% toc %}
 
 
 ## Why I Started This
