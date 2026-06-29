@@ -95,6 +95,15 @@ $headers = @{ Authorization = "Bearer $token" }
 | **$select=id,name**| Select specific fields           | Reduces response payload    |
 | **_=timestamp**    | Cache buster                     | Force fresh data each call  |
 
+| head1        | head two          | three |
+|:-------------|:------------------|:------|
+| ok           | good swedish fish | nice  |
+| out of stock | good and plenty   | nice  |
+| ok           | good `oreos`      | hmm   |
+| ok           | good `zoute` drop | yumm  |
+
+
+
 To keep responses efficient and predictable, I used OData parameters such as `$count`, `$top`, `$orderby`, and `$select`:
 
 ```powershell
