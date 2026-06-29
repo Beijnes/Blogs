@@ -33,43 +33,16 @@ Using the Recast Application Workspace REST API directly is not a supported prac
 
 For supported automation and supportability, use the official PowerShell module from Recast Software:
 
-- `Liquit.Server.Powershell`
+ `Liquit.Server.Powershell`
 
 This blog is about exploration and learning, not replacing the supported path.
 
 
-## OAuth2 Authentication and license zone retrieval flow
+## General flow of the script with RESTAPI and OAuth authentication
 
 ![Diagram of script](img/diagram-process.png)
 
-
-## Key API Concepts Visualized
-
-### 🔑 Authentication Flow
-
-![Authentication Flow](img/authentication-flow.png){: .img-small }
-
-### 🔍 OData Query Parameters
-| Parameter          | Purpose                          | Example                     |
-|--------------------|----------------------------------|-----------------------------|
-| **$count=true**    | Include total count in response  | Enables pagination info     |
-| **$skip=0**        | Pagination: Skip N records       | Skip first 0 records        |
-| **$top=50**        | Pagination: Return max N records | Return max 50 per request   |
-| **$orderby=name**  | Sort results                     | Sort by name ascending      |
-| **$select=id,name**| Select specific fields           | Reduces response payload    |
-| **_=timestamp**    | Cache buster                     | Force fresh data each call  |
-
-### 🔄 Loop Through All Zones
-```
-FOR EACH zone:
-  ├─ Extract Zone ID & Name
-  ├─ GET /api/v3/system/zones/{zoneId}/?$select=id,license
-  ├─ Retrieve License Object
-  └─ Append to Results Array
-RETURN allLicenses
-```
-
-## Step-by-Step: How I Built the Calls
+## Step-by-Step: How I Build the Calls
 
 ### Technologies Used
 
@@ -80,6 +53,10 @@ RETURN allLicenses
 - Cache-busting query parameter (`_`) to avoid stale browser/proxy responses
 
 ### 1. Authenticate with OAuth2 (Password Grant)
+
+#### 🔑 Authentication Flow
+
+![Authentication Flow](img/authentication-flow.png){: .img-small }
 
 The first step is obtaining an access token from the OAuth2 token endpoint. In PowerShell, this is done with a form-encoded POST request:
 
@@ -108,6 +85,16 @@ $headers = @{ Authorization = "Bearer $token" }
 
 ### 3. Query Zones with OData Parameters
 
+#### 🔍 OData Query Parameters
+| Parameter          | Purpose                          | Example                     |
+|:-------------------|:---------------------------------|:----------------------------|
+| **$count=true**    | Include total count in response  | Enables pagination info     |
+| **$skip=0**        | Pagination: Skip N records       | Skip first 0 records        |
+| **$top=50**        | Pagination: Return max N records | Return max 50 per request   |
+| **$orderby=name**  | Sort results                     | Sort by name ascending      |
+| **$select=id,name**| Select specific fields           | Reduces response payload    |
+| **_=timestamp**    | Cache buster                     | Force fresh data each call  |
+
 To keep responses efficient and predictable, I used OData parameters such as `$count`, `$top`, `$orderby`, and `$select`:
 
 ```powershell
@@ -120,6 +107,16 @@ $allZones = $zonesResponse.value
 This call retrieves the zone list and basic license-related fields while minimizing payload size.
 
 ### 4. Loop Zones and Retrieve Detailed License Data
+
+#### 🔄 Loop Through All Zones
+```
+FOR EACH zone:
+  ├─ Extract Zone ID & Name
+  ├─ GET /api/v3/system/zones/{zoneId}/?$select=id,license
+  ├─ Retrieve License Object
+  └─ Append to Results Array
+RETURN allLicenses
+```
 
 For each zone, I make a second API call to fetch detailed license information:
 
