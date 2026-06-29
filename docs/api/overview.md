@@ -1,9 +1,9 @@
 ---
-title: "API Overview"
-parent: API
+title: "Overview"
+parent: "API"
 nav_order: 1
 ---
 
 # API Overview
 
-This page belongs to the API section.
+General API information.

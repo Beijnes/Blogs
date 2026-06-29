@@ -1,9 +1,9 @@
 ---
 title: "Blog"
-nav_order: 1
+nav_order: 4
+has_children: true
 ---
 
 # Blog
 
-Welcome to the blog section.  
-Posts appear in the sidebar automatically.
+All blog posts.

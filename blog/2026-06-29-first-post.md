@@ -1,10 +1,9 @@
 ---
 title: "My First Blog Post"
+parent: "Blog"
 nav_order: 1
 ---
 
 # My First Blog Post
 
-This is my first blog post using **Just the Docs**.
-
-Everything is written in Markdown and built automatically by GitHub Pages.
+Markdown-only blog post.
