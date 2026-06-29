@@ -13,11 +13,6 @@ just_the_docs:
 nav_order: 1
 
 # Collections for blog posts
-collections:
-  blog:
-    output: true
-    permalink: /blog/:path/
-
 just_the_docs:
   collections:
     blog:
