@@ -177,7 +177,7 @@ Using this approach, I created a script that:
 
 Final script: [restapi-blog.ps1](restapi-blog.ps1)
 
-```Powershell
+```powershell
 # -------------------------------------------------------
 # Liquit REST API – Annotated Example
 # Collects zone and license data via OAuth2 authentication
